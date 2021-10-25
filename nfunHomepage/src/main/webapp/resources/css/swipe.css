@@ -1,0 +1,6 @@
+@charset "UTF-8";
+@font-face {font-family: 'S-CoreDream-9Black';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');font-weight: normal;font-style: normal;}
+.swiper {width: 100%;height: 100%;}.swiper-slide {background-position: center;background-size: cover;font-family: 'S-CoreDream-9Black';}.swiper-slide img {display: block;width: 100%;}
+@media screen and (max-width:1024px){.swiper{height: 60%;}}
+@media screen and (max-width:768px){.swiper {	height: 60%;}}
+@media screen and (max-width:414px) {.swiper {height: 40%;}}
