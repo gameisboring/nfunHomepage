@@ -31,6 +31,8 @@ public class mainService {
 
 	public String getPortfolio() {
 		
+		System.out.println(" service /getPortfolio");
+		
 		ArrayList<portfolioDto> list = new ArrayList<portfolioDto>();
 		
 		list = dao.getPortfolio();

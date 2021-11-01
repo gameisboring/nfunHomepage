@@ -60,31 +60,43 @@ public class HomeController {
 	/* url : /home */
 	@RequestMapping(value = "/home")
 	public String home() {
-		return "home";
+		return "/home";
 	}
 
 	/* url : /aboutDetail */
 	@RequestMapping(value = "/aboutDetail")
 	public String aboutDetail() {
-		return "aboutDetail";
+		return "/aboutDetail";
 	}
 
 	/* url : /serviceDetail */
 	@RequestMapping(value = "/serviceDetail")
 	public String serviceDetail() {
-		return "serviceDetail";
+		return "/serviceDetail";
 	}
 	
 	/* url : /home */
 	@RequestMapping(value = "/portfolioDetail")
 	public String portfolioDetail() {
-		return "portfolioDetail";
+		return "/portfolioDetail";
 	}
 
 	/* url : /template */
 	@RequestMapping(value = "/template")
 	public String template() {
-		return "template";
+		return "/template";
+	}
+	
+	/* url : /manager */
+	@RequestMapping(value = "/manager")
+	public String manager() {
+		return "/manager/main";
+	}
+	
+	/* url : /portfolioManager */
+	@RequestMapping(value = "/portfolioManager")
+	public String portfolioManager() {
+		return "/manager/portfolioManager";
 	}
 
 	/* url : /contactRequest */
@@ -95,12 +107,13 @@ public class HomeController {
 		
 		  int insertResult = msvc.contactRequest(cdto); if(insertResult>0) { System.out.println("입력성공"); }else { System.out.println("입력실패"); }
 
-		return "home";
+		return "/home";
 	}
 	
 	
 	@RequestMapping("/getPortfolio")
 	public @ResponseBody String getPortfolio() {
+		System.out.println(" url /getPortfolio");
 		return msvc.getPortfolio();
 	}
 }

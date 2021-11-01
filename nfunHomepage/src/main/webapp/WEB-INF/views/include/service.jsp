@@ -9,7 +9,7 @@
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
-                        <div class="card mb-3 p-4 service-card shadow" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card mb-3 p-4 service-card" data-aos="fade-up" data-aos-delay="300">
                         <span class="fa-stack fa-4x mx-auto">
                             <i class="fas fa-circle fa-stack-2x text-nfun"></i>
                             <i class="fas fa-video fa-stack-1x fa-inverse"></i>
@@ -23,7 +23,7 @@
                     </div>
                     
                     <div class="col-md-4">
-                    	<div class="card mb-3 p-4 service-card shadow" data-aos="fade-up" data-aos-delay="600">
+                    	<div class="card mb-3 p-4 service-card" data-aos="fade-up" data-aos-delay="600">
                         <span class="fa-stack fa-4x mx-auto">
                             <i class="fas fa-circle fa-stack-2x text-nfun"></i>
                             <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
@@ -36,7 +36,7 @@
                     	</div>
                     </div>
                     <div class="col-md-4">
-                    <div class="card mb-3 p-4 service-card shadow" data-aos="fade-up" data-aos-delay="900">
+                    <div class="card mb-3 p-4 service-card" data-aos="fade-up" data-aos-delay="900">
                         <span class="fa-stack fa-4x mx-auto">
                             <i class="fas fa-circle fa-stack-2x text-nfun"></i>
                             <i class="fas fa-trophy fa-stack-1x fa-inverse"></i>

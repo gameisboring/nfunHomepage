@@ -11,7 +11,8 @@
 	</insert>
 	
 	<select id="getPortfolio"  resultMap="portfolioDto" parameterType="com.nfun.dto.portfolioDto">
-		SELECT * FROM NFUN_PORTFOLIO
+		SELECT PF_TITLE,PF_SUBTITLE,PF_THUMB,PF_CONTEXT,PF_CATEGORY,PF_CLIENT,PF_VIDEO_URL,TO_CHAR(PF_DATE,'YYYY/MM/DD') PF_DATE
+		FROM NFUN_PORTFOLIO
 	</select>
 	
 	<resultMap type="com.nfun.dto.contactMessageDto" id="contactView">

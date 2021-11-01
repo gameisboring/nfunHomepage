@@ -3,9 +3,9 @@
         <section class="page-section" id="contact" >
             
             <div class="container bo">
-                <div class="text-center">
+                <div class="text-center mb-5">
                     <h2 class="section-heading text-uppercase">온라인 문의</h2>
-                    <h3 class="section-subheading text-muted">온라인 상담 신청은 24시간 가능하며<br>문의를 남겨주시면 빠르고 정확한 답변 드리겠습니다.</h3>
+                    <h5 class="card-title text-muted mb-3">온라인 상담 신청은 24시간 가능하며<br>문의를 남겨주시면 빠르고 정확한 답변 드리겠습니다.</h5>
                 </div>
                 <!-- * * * * * * * * * * * * * * *-->
                 <!-- * * SB Forms Contact Form * *-->

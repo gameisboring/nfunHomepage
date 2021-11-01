@@ -19,4 +19,3 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="${pageContext.request.contextPath }/resources/css/styles.css" rel="stylesheet" />
-<link href="${pageContext.request.contextPath }/resources/css/swipe.css" rel="stylesheet" />

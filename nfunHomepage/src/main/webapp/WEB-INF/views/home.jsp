@@ -16,76 +16,17 @@
         <%@ include file="include/service.jsp" %>
         <!-- Portfolio Grid-->
         <section class="page-section bg-nfun-light" id="portfolio">
-            
-            <div class="container" >
-                
-                <div class="text-center">
+            <div class="container text-center" >
+                <div class="text-center mb-5">
                     <h2 class="section-heading text-uppercase">업무 이력</h2>
-                    <h3 class="card-title text-muted mb-3">PORTFOLIO</h3>
+                    <h5 class="card-title text-muted mb-3">PORTFOLIO</h5>
                 </div>
 	                <div class="row" id="portfolioSection">
-                   <%-- <div class="col-lg-4 col-sm-6 mb-4">                        
-                        <!-- Portfolio item 1-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="${pageContext.request.contextPath }/resources/assets/img/portfolio/1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                            </div>
-                        </div>
-                    </div> --%>
+                   
                 </div>
+                <button class="btn btn-lg btn-nfun my-5"  onclick="location.href='portfolioDetail'">MORE</button>
             </div>
        </section>
-        <!-- Team-->
-        <section class="page-section bg-light" id="team">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="${pageContext.request.contextPath }/resources/assets/img/team/1.jpg" alt="..." />
-                            <h4>Parveen Anand</h4>
-                            <p class="text-muted">Lead Designer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="${pageContext.request.contextPath }/resources/assets/img/team/2.jpg" alt="..." />
-                            <h4>Diana Petersen</h4>
-                            <p class="text-muted">Lead Marketer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="${pageContext.request.contextPath }/resources/assets/img/team/3.jpg" alt="..." />
-                            <h4>Larry Parker</h4>
-                            <p class="text-muted">Lead Developer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
-                </div>
-            </div>
-        </section>
         <!-- Clients-->
         <div class="py-5">
             <div class="container">
@@ -153,6 +94,7 @@
     } 
     
     function getPortfolio(){
+    	console.log("getPortfolio() start !")
     	$.ajax({
     		type:"portfolio",
     		url :"getPortfolio",
@@ -230,7 +172,7 @@
         		output+='<div class="close-modal" data-bs-dismiss="modal"><img src="${pageContext.request.contextPath }/resources/assets/img/close-icon.svg" alt="Close modal" /></div>'
         			output+='<div class="container">'
         				output+='<div class="row justify-content-center">'
-        					output+='<div class="col-lg-8">'
+        					output+='<div class="col-lg-12">'
         						output+='<div class="modal-body">'
         							output+='<h2 class="text-uppercase">'+contentsInfo.title+'</h2>'
                         if(contentsInfo.subtitle != null){
@@ -238,12 +180,12 @@
                         }else{
             				output += "<br><br>"
             			}
-                        output +='<iframe width="560" height="315" src="https://www.youtube.com/embed/'+portfolioVideoUrl+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+                        output +='<iframe class="" src="https://www.youtube.com/embed/'+portfolioVideoUrl+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
                         output +='<p>'+contentsInfo.context+'</p>'
                         output +='<ul class="list-inline">'
-                        output += '<li><strong>Client:</strong>'+contentsInfo.client+'</li>'
-                        output +='<li><strong>Category:</strong>'+contentsInfo.category+'</li></ul>'
-                        output +='<button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button"><i class="fas fa-times me-1"></i>닫기</button>'
+                        output += '<li><strong>클라이언트 : </strong>'+contentsInfo.client+'</li>'
+                        output +='<li><strong>카테고리 : </strong>'+contentsInfo.category+'</li></ul>'
+                        output +='<button class="btn btn-nfun btn-xl text-uppercase" data-bs-dismiss="modal" type="button"><i class="fas fa-times me-1"></i>닫기</button>'
                         output +='</div></div></div></div></div></div>';
         
                      portfolioModal.innerHTML = output;
