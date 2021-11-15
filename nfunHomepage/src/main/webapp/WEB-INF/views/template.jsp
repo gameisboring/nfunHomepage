@@ -11,9 +11,8 @@
 <%@ include file="include/head-links.jsp"%>
 </head>
 <body id="page-top">
-	<%@ include file="include/header.jsp"%>
+	<%@ include file="include/navbar-template.jsp"%>
 	<%@ include file="include/about.jsp"%>
-	  
 	<section class="page-section" >
 		<div class="container">
 		

@@ -1,0 +1,65 @@
+{
+  "items": [
+  
+    {
+      "title": "E-SPORTS 대회",
+      "subtitle": "경기도 장애인 IT 페스티벌",
+      "thumb": "pf_01.webp",
+      "context": "경기도 장애인 재활협회에서 주최한 E-SPORTS 대회",
+      "category": "E-SPORTS",
+      "client": "경기도 장애인 재활협회",
+      "video_url": "https://youtu.be/q52rvAuVqYE",
+      "date": "21/06/21"
+    },
+    {
+      "title": "kotra 유튜브 콘텐츠 촬영",
+      "thumb": "pf_04.webp",
+      "context": "kotra 에서 제작하는 유튜브 컨텐츠 촬영",
+      "category": "컨텐츠 촬영",
+      "client": "kotra",
+      "video_url": "https://youtu.be/Cua_1B0lPdY",
+      "date": "21/05/21"
+    },
+    {
+      "title": "버추얼 스튜디오 비대면 시상식",
+      "subtitle": "액정 너머 너의 목소리가 들려",
+      "thumb": "pf_02.webp",
+      "context": "WEBEX로 진행한 비대면 시상식",
+      "category": "webex 라이브",
+      "client": "AMGEN",
+      "video_url": "https://youtu.be/nOWZPZKPjxM",
+      "date": "21/06/23"
+    },
+    {
+      "title": "핫세의 인생밥상",
+      "subtitle": "아프리카 TV",
+      "thumb": "pf_03.webp",
+      "context": "아프리카 TV 라이브 방송 촬영 중계",
+      "category": "아프리카 TV",
+      "client": "아프리카 TV",
+      "video_url": "https://youtu.be/9RImK-Qi0Es",
+      "date": "21/10/06"
+    },
+    {
+      "title": "유키카 앨범발매기념 라이브",
+      "subtitle": "트위터 블루룸",
+      "thumb": "pf_06.webp",
+      "context": "트위터 블루룸으로 진행한 앨범 발매기념 라이브 촬영 중계",
+      "category": "트위터 블루룸",
+      "client": "유키카",
+      "video_url": "https://youtu.be/bPjiJ9Dev_U",
+      "date": "21/04/07"
+    },
+    {
+      "title": "트위치 코리아 플레이 엑스포",
+      "subtitle": "트스티벌",
+      "thumb": "pf_05.webp",
+      "context": "트위치에서 진행한 E-SPORTS 대회 중계",
+      "category": "E-SPORTS",
+      "client": "경기도 장애인 재활협회",
+      "video_url": "https://youtu.be/ODKTT10H19U",
+      "date": "21/07/15"
+    }
+    
+  ]
+}

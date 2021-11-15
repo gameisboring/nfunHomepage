@@ -75,10 +75,20 @@ public class HomeController {
 		return "/serviceDetail";
 	}
 	
-	/* url : /home */
-	@RequestMapping(value = "/portfolioDetail")
-	public String portfolioDetail() {
-		return "/portfolioDetail";
+	/* url : /portfolioDetail/production */
+	@RequestMapping(value = "streaming")
+	public String portfolioStreaming() {
+		return "/portfolio/streaming";
+	}
+	/* url : /portfolioDetail/production */
+	@RequestMapping(value = "production")
+	public String portfolioProduction() {
+		return "/portfolio/production";
+	}
+	/* url : /portfolioDetail/production */
+	@RequestMapping(value = "esports")
+	public String portfolioEsports() {
+		return "/portfolio/esports";
 	}
 
 	/* url : /template */
@@ -116,4 +126,9 @@ public class HomeController {
 		System.out.println(" url /getPortfolio");
 		return msvc.getPortfolio();
 	}
+	/*
+	 * @RequestMapping("/getPortfolio2") public @ResponseBody String getPortfolio2() { System.out.println(" url /getPortfolio2"); return msvc.getPortfolio2(); }
+	 */
+	
+	
 }

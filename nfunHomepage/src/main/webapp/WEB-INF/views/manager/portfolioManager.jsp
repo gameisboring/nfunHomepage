@@ -53,36 +53,42 @@
 
       window.addEventListener('DOMContentLoaded', function () {
         console.log('관리자 시작!')
-        console.log('getPortfolio!')
         getPortfolio()
       })
 
-      function getPortfolio() {
-        console.log('getPortfolio() start !')
-        $.ajax({
-          type: 'portfolio',
-          url: 'getPortfolio',
-          dataType: 'json',
-          success: (res) => {
-            for (let i in res) {
-              portfolioRowRender(res[i], ++i)
-            }
-          },
-        })
-      }
+      function getPortfolio(){
+    	
+    	const jsonAddr = '${pageContext.request.contextPath }/resources/js/NFUN_PORTFOLIO_DATA_TABLE.json'
+    	
+    	console.log('getPortfolio2() start !')
+    	$.getJSON(jsonAddr, function(data){
+			$.each(data, function(i, item){
+				for (let i in item) {
+					portfolioRowRender(item[i], ++i)
+          		}
+			})
+      	})
+    }
 
       function portfolioRowRender(info, i) {
-        const output =
+        let output =
           '<tr class="table-primary">' +
           '<th scope="row">' + info.title +'</th>' +
-          	'<td>' + info.subtitle +'</td>' +
+          	'<td>';
+          	if(info.subtitle){
+          		output += info.subtitle
+          	}else{
+          		output += ' '
+          	} 
+          	output +='</td>' +
           	'<td>' + info.context +'</td>' +
           	'<td>' + info.category +'</td>' +
           	'<td>' + info.client + '</td>' +
-          	'<td><a href=\"' + info.videoUrl + '\">'+ info.videoUrl +'</a></td>'+
+          	'<td><a href=\"' + info.videoUrl + '\">'+ info.video_url +'</a></td>'+
           	'<td>' + info.date+ '</td>' +
-          	'<td>' + '<img class="thumb"alt=""src="/home/resources/assets/img/portfolio/'+info.thumb+'\"></td></tr>'
-		console.log(output)
+          	'<td>' + '<img class="thumb"alt=""src="/home/resources/assets/img/portfolio/'+info.thumb+'\"></td>'
+          	'<td>' + '<button class="btn btn-nf" onclick=delPortfolio('+info.title+')></button>' +'</td>' +
+          	'</tr>'
         const tbodyEl = document
           .querySelector('#tbody')
           .insertAdjacentHTML('beforeend', output)

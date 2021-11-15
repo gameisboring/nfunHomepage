@@ -41,76 +41,65 @@
 </body>
 <script>
 
-$(document).ready(function(){
+
+window.addEventListener('DOMContentLoaded', function () {
     console.log('포트폴리오 페이지 입니다 :)');
     getPortfolio();
-});
+})
 
+//PortfolioJSON file Read
 function getPortfolio(){
-	$.ajax({
-		type:"portfolio",
-		url :"getPortfolio",
-		dataType:"json",
-		success:res=>{
-			for(let i in res){
-				portfolioCardRender(res[i], ++i);
-			}
-			for(let i in res){
-                portfolioModalRender(res[i], ++i);
-			}
-		}
-	})
+	
+	const jsonAddr = '${pageContext.request.contextPath }/resources/js/NFUN_PORTFOLIO_DATA_TABLE.json'
+	
+	console.log('getPortfolio2() start !')
+	$.getJSON(jsonAddr, function(data){
+		$.each(data, function(i, item){
+			console.log(item)
+			for (let i in item) {
+        		portfolioCardRender(item[i], ++i)
+      		}
+      		for (let i in item) {
+        		portfolioModalRender(item[i], ++i)
+      		}
+		})
+  	})
 }
 
-function portfolioCardRender(contentsInfo, i){
+function portfolioCardRender(contentsInfo, i) {
+    let portfolioCard = document.createElement('div')
+    portfolioCard.classList.add('col-lg-4', 'col-sm-6', 'mb-4')
 
-    let portfolioCard = document.createElement("div");
-        portfolioCard.classList.add("col-lg-3","col-sm-4","mb-4");
-        // portfolioCard.setAttribute("data-aos","fade-up");
+    let portfolioItem = document.createElement('div')
+    portfolioItem.classList.add('portfolio-item')
 
-    let portfolioItem = document.createElement("div");
-        portfolioItem.classList.add("portfolio-item");
+    let portfoliolink = document.createElement('a')
+    portfoliolink.classList.add('portfolio-link')
+    portfoliolink.setAttribute('data-bs-toggle', 'modal')
+    let hrefTarget = '#portfolioModal' + i
+    portfoliolink.setAttribute('href', hrefTarget)
 
-    let portfoliolink = document.createElement("a");
-    	portfoliolink.classList.add("portfolio-link");
-        portfoliolink.setAttribute("data-bs-toggle","modal");
-        let hrefTarget = "#portfolioModal"+i;
-        portfoliolink.setAttribute("href",hrefTarget);
+    let portfolioHover =
+      '<div class="portfolio-hover"><div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div></div>'
+    let thumbImg = document.createElement('img')
+    thumbImg.classList.add('img-fluid')
+    thumbImg.setAttribute(
+      'src',
+      '${pageContext.request.contextPath }/resources/assets/img/portfolio/' +
+        contentsInfo.thumb
+    )
 
-        let portfolioHover = '<div class="portfolio-hover"><div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div></div>';
-        let thumbImg = document.createElement("img");
-            thumbImg.classList.add("img-fluid");
-            thumbImg.setAttribute("src","${pageContext.request.contextPath }/resources/assets/img/portfolio/"+contentsInfo.thumb);
-
-    let portfolioCaption = document.createElement("div");
-        portfolioCaption.classList.add("portfolio-caption");
-
-        let portfolioCaptionHead = document.createElement("div");
-        portfolioCaptionHead.classList.add("portfolio-caption-heading");
-        portfolioCaptionHead.innerText = contentsInfo.title;
-
-        let portfolioCaptionSubhead = document.createElement("div");
-        portfolioCaptionSubhead.classList.add("portfolio-caption-subheading","text-muted");
-        if(contentsInfo.subtitle != null){
-            portfolioCaptionSubhead.innerText = contentsInfo.subtitle;
-        }
-    
-        portfolioCard.appendChild(portfolioItem);
-        portfolioItem.appendChild(portfoliolink)
-        portfolioItem.appendChild(portfolioCaption);
-        portfoliolink.innerHTML = portfolioHover;
-        portfoliolink.appendChild(thumbImg);
-        portfolioCaption.appendChild(portfolioCaptionHead)
-        portfolioCaption.appendChild(portfolioCaptionSubhead);
-		
-        portfolioSection.appendChild(portfolioCard);
-
-}
+    portfolioCard.appendChild(portfolioItem)
+    portfolioItem.appendChild(portfoliolink)
+    portfoliolink.innerHTML = portfolioHover
+    portfoliolink.appendChild(thumbImg)
+    portfolioSection.appendChild(portfolioCard)
+  }
 
 function portfolioModalRender(contentsInfo, i){
     
     var modalId = "portfolioModal" + i;
-    var portfolioVideoUrl =contentsInfo.videoUrl.substring(17,30);
+    var portfolioVideoUrl =contentsInfo.video_url.substring(17,30);
 
     var portfolioModal = document.createElement("div");
     portfolioModal.id = modalId;
